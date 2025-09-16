@@ -117,7 +117,7 @@ h1 {
 .status-list {
   display: none; /* Изначально скрыт */
   position: absolute; /* Позиционируется относительно .dropdown */
-  z-index: 1; /* Чтобы был поверх других элементов */
+  z-index: 1000; /* Чтобы был поверх других элементов */
   width: fit-content;
 }
 

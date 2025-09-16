@@ -75,4 +75,13 @@
 
 </body>
 
+<script>
+    function deleteIdea(id) {
+        let ans = confirm("Подтвердите удаление идеи!!!");
+        if (ans == true) {
+            window.location = `delete.php?id=${id}`;
+        }
+    }
+</script>
+
 </html>
