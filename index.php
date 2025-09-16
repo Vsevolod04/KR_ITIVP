@@ -38,15 +38,24 @@
                     <td>{$idea['title']}</td>
                     <td>{$idea['category']}</td>
                     <td>{$idea['description']}</td>
-                    <td>{$idea['status']}</td>
+                    <td>
+                    <div class='dropdown'>
+                        <button type='button' class='btn-status' onclick='showStatuses'>{$idea['status']}</button>
+                        <div class='status-list'>
+                            <a href='update_status.php?id={$idea['id']}&newStatus=выполняется'>выполняется</a>
+                            <a href='update_status.php?id={$idea['id']}&newStatus=отложено'>отложено</a>
+                            <a href='update_status.php?id={$idea['id']}&newStatus=готово'>готово</a>
+                        </div>
+                    </div>
+                    </td>
                     <td>{$idea['created_at']}</td>
                     <td>{$idea['complexity']}</td>
                     <td data-label='Действия'>
                         <div class='action-buttons'>
-                            <button class='btn btn-edit' onclick='editIdea({$idea['id']})'>
+                            <button type='button' class='btn btn-edit' onclick='editIdea({$idea['id']})'>
                                 <img src='icons/pencil-fill.svg'  alt='edit'>
                             </button>
-                            <button class='btn btn-delete' onclick='deleteIdea({$idea['id']})'>
+                            <button type='button' class='btn btn-delete' onclick='deleteIdea({$idea['id']})'>
                                 <img src='icons/trash-fill.svg'  alt='delete'>
                             </button>
                     </td>
