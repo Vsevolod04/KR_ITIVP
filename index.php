@@ -13,6 +13,8 @@
 <body>
     <h1>База идей для проектов</h1>
 
+    <button type="button" class="btn btn-add">Добавить идею</button>
+
     <table class="main-table">
         <thead>
             <tr>
@@ -67,9 +69,12 @@
 
             <?php
                 endwhile;
+            } else {
+                $msg = 'Нет доступа к БД';
+                header("Location: error.php?msg=" . urlencode($msg));
+                exit();
             }
             ?>
-
         </tbody>
     </table>
 

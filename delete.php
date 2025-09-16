@@ -8,7 +8,7 @@ if (isset($_GET["id"])) {
         $stmt->bindParam(1, $_GET["id"], PDO::PARAM_INT);
         $stmt->execute();
     } catch (PDOException $e) {
-        header("Location: error.php?error={$e->getMessage()}");
+        header("Location: error.php?msg=" . urlencode($e->getMessage()));
         exit();
     }
     header("Location: index.php");

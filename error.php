@@ -9,7 +9,10 @@
     <h1>Ошибка</h1>
     <p>
         <?php
-            echo [$_GET["error"]];
+            if (isset($_GET["msg"]))
+                echo $_GET["msg"];
+            else 
+                echo "Неизвестная ошибка";
         ?>
     </p>
     <a href="index.php">Вернуться</a>

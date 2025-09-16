@@ -75,6 +75,21 @@ h1 {
   cursor: pointer;
 }
 
+.btn-add{
+  padding: 1% 2%;
+  margin-bottom: 1vh;
+  margin-top: 0;
+  margin-inline: auto;
+  background-color: #2cbd00;
+}
+
+
+.btn-add:hover{
+  background-color: #28a303;
+}
+
+
+
 .btn-edit {
   background-color: #ffc107;
 }

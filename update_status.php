@@ -9,7 +9,7 @@ if (isset($_GET["id"]) and isset($_GET["newStatus"])) {
         $stmt->bindParam(2, $_GET["id"], PDO::PARAM_INT);
         $stmt->execute();
     } catch (PDOException $e) {
-        header("Location: error.php?error={$e->getMessage()}");
+        header("Location: error.php?msg=" . urlencode($e->getMessage()));
         exit();
     }
     header("Location: index.php");
