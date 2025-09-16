@@ -41,7 +41,7 @@
                         <td><?php echo $idea['description'] ?></td>
                         <td>
                             <div class='dropdown'>
-                                <button type='button' class='btn-status' onclick='showStatuses'><?php echo $idea['status'] ?></button>
+                                <button type='button' class='btn-status'><?php echo $idea['status'] ?></button>
                                 <div class='status-list'>
                                     <a href="update_status.php?id=<?php echo $idea['id'] ?>&newStatus=выполняется">
                                         выполняется

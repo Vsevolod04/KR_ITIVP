@@ -110,10 +110,13 @@ h1 {
   height: fit-content;
 }
 
+.dropdown:hover .status-list{
+  display: block;
+}
+
 .status-list {
-  display: block; /* Изначально скрыт */
+  display: none; /* Изначально скрыт */
   position: absolute; /* Позиционируется относительно .dropdown */
-  margin-top: 8%;
   z-index: 1; /* Чтобы был поверх других элементов */
   width: fit-content;
 }
