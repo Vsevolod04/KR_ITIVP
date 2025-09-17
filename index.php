@@ -75,7 +75,7 @@
                         <td><?php echo $idea['id'] ?></td>
                         <td><?php echo $idea['title'] ?></td>
                         <td><?php echo $idea['category'] ?></td>
-                        <td><?php echo $idea['description'] ?></td>
+                        <td style="font-size: 0.6rem;"><?php echo $idea['description'] ?></td>
                         <td>
                             <div class='dropdown'>
                                 <button type='button' class='btn btn-status'><?php echo $idea['status'] ?></button>
