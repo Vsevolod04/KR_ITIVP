@@ -11,9 +11,44 @@
 </head>
 
 <body>
+
+    <script>
+        function deleteIdea(id) {
+            let ans = confirm("Подтвердите удаление идеи!!!");
+            if (ans == true) {
+                window.location = `delete.php?id=${id}`;
+            }
+        }
+
+        function editIdea(id) {
+            window.location = `edit.php?id=${id}`;
+        }
+
+        function colorStatus() {
+            let statuses = document.getElementsByClassName("btn-status");
+
+            for (let btn of statuses) {
+                switch (btn.textContent) {
+                    case "выполняется":
+                        btn.setAttribute("style", "background-color: #ffd452;");
+                        break;
+                    case "отложено":
+                        btn.setAttribute("style", "background-color: #ff7458;");
+                        break;
+                    case "готово":
+                        btn.setAttribute("style", "background-color: #80eb5f;");
+                        break;
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", colorStatus);
+    </script>
+
+
     <h1>База идей для проектов</h1>
 
-    <button type="button" class="btn btn-add">Добавить идею</button>
+    <button type="button" class="btn btn-add" onclick="window.location='add.php'">Добавить идею</button>
 
     <table class="main-table">
         <thead>
@@ -33,7 +68,7 @@
             include "config.php";
             $conn = getConn();
             if ($conn != null) {
-                $data = $conn->query("SELECT * FROM ideas");
+                $data = $conn->query("SELECT * FROM ideas ORDER BY created_at DESC");
                 while ($idea = $data->fetch()) :
             ?>
                     <tr>
@@ -43,7 +78,7 @@
                         <td><?php echo $idea['description'] ?></td>
                         <td>
                             <div class='dropdown'>
-                                <button type='button' class='btn-status'><?php echo $idea['status'] ?></button>
+                                <button type='button' class='btn btn-status'><?php echo $idea['status'] ?></button>
                                 <div class='status-list'>
                                     <a href="update_status.php?id=<?php echo $idea['id'] ?>&newStatus=выполняется">
                                         выполняется
@@ -79,14 +114,5 @@
     </table>
 
 </body>
-
-<script>
-    function deleteIdea(id) {
-        let ans = confirm("Подтвердите удаление идеи!!!");
-        if (ans == true) {
-            window.location = `delete.php?id=${id}`;
-        }
-    }
-</script>
 
 </html>
