@@ -83,11 +83,11 @@
     <div class="container">
         <form method="POST" action="edit.php">
             <div class="form-group">
-                <label>Id:</label>
-                <input name="id" type="text" value="<?php echo $idea["id"]  ?>" readonly required>
+                <label>Id: </label>
+                <input name="id" type="text" style="background-color: #0067815e;" value="<?php echo $idea["id"]  ?>" readonly required>
             </div>
             <div class="form-group">
-                <label>Название:</label>
+                <label>Название: <span style="color: red;">*</span></label>
                 <input name="title" type="text" value="<?php echo $idea["title"]  ?>" maxlength="100" required>
             </div>
             <div class="form-group">
@@ -99,7 +99,7 @@
                 <textarea name="description" maxlength="2000" rows="5"><?php echo $idea["description"] ?></textarea>
             </div>
             <div class="form-group">
-                <label>Статус:</label>
+                <label>Статус: <span style="color: red;">*</span></label>
                 <select name="status" required>
                     <option value="готово"
                         <?php if ($idea["status"] == "готово") echo "selected" ?>>
@@ -116,11 +116,11 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Дата создания:</label>
-                <input name="created_at" value="<?php echo $idea["created_at"]  ?>" readonly required>
+                <label>Дата создания: </label>
+                <input name="created_at" style="background-color: #0067815e;" value="<?php echo $idea["created_at"]  ?>" readonly required>
             </div>
             <div class="form-group">
-                <label>Сложность:</label>
+                <label>Сложность: <span style="color: red;">*</span></label>
                 <select name="complexity" required>
                     <option value="легко"
                         <?php if ($idea["complexity"] == "легко") echo "selected" ?>>

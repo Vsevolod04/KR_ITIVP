@@ -54,7 +54,7 @@
     <div class="container">
         <form method="POST" action="add.php">
             <div class=" form-group">
-                <label>Название:</label>
+                <label>Название: <span style="color: red;">*</span></label>
                 <input name="title" type="text" placeholder="Введите название идеи" maxlength="100" required>
             </div>
             <div class="form-group">
@@ -66,7 +66,7 @@
                 <textarea name="description" maxlength="2000" rows="5" placeholder="Введите описание идеи"></textarea>
             </div>
             <div class="form-group">
-                <label>Статус:</label>
+                <label>Статус: <span style="color: red;">*</span></label>
                 <select name="status" required>
                     <option value="готово">
                         готово
@@ -80,7 +80,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Сложность:</label>
+                <label>Сложность: <span style="color: red;">*</span></label>
                 <select name="complexity" required>
                     <option value="легко">
                         легко
